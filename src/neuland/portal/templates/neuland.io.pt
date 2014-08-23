@@ -9,6 +9,7 @@
 	<body>
 		<h1>Neuland IO</h1>
 
+		<script type="text/javascript" src="${request.static_url('neuland.portal:static/vendor/ember/ember.prod.js')}"></script>
 		<script type="text/javascript" src="${request.static_url('neuland.portal:static/vendor/jquery/jquery-2.1.1.js')}"></script>
 		<script type="text/javascript" src="${request.static_url('neuland.portal:static/vendor/bootstrap/js/bootstrap.js')}"></script>
  	</body>
