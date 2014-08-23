@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="${request.locale_name}">
+	<head>
+		<meta charset="utf-8">
+		<title>NeulandIO</title>
+	</head>
+
+	<body>
+
+	</body>
+</html>
