@@ -3,9 +3,13 @@
 	<head>
 		<meta charset="utf-8">
 		<title>NeulandIO</title>
+		<link rel="stylesheet" href="${request.static_url('neuland.portal:static/bootstrap/css/bootstrap.css')}"/>
 	</head>
 
 	<body>
+		<h1>Neuland IO</h1>
 
-	</body>
+		<script type="text/javascript" src="${request.static_url('neuland.portal:static/jquery/jquery-2.1.1.js')}"></script>
+		<script type="text/javascript" src="${request.static_url('neuland.portal:static/bootstrap/js/bootstrap.js')}"></script>
+ 	</body>
 </html>
