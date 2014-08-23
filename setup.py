@@ -17,7 +17,7 @@ requires = [
     'transaction',
     'zope.sqlalchemy',
     'waitress',
-    ]
+    ],
 
 setup(name='neuland.portal',
       version='0.0',
@@ -39,7 +39,8 @@ setup(name='neuland.portal',
 
       include_package_data=True,
       zip_safe=False,
-      test_suite='neuland.portal',
+      test_suite='neuland.portal.tests',
+      tests_require=['pytest'],
       install_requires=requires,
       entry_points="""\
       [paste.app_factory]
