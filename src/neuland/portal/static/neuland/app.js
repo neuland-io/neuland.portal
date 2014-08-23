@@ -1,1 +1,1 @@
-window.Neuland = Ember.Application.create();
+Neuland = Ember.Application.create();
