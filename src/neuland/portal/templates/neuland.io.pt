@@ -4,9 +4,9 @@
 		<meta charset="utf-8">
 		<title>NeulandIO</title>
 		<link rel="stylesheet" href="${request.static_url('neuland.portal:static/vendor/bootstrap/css/bootstrap.css')}"/>
-		<link rel="stylesheet" href="${request.static_url('neuland.portal:static/neuland/css/style.css')}"/>
+		<link rel="stylesheet" href="${request.static_url('neuland.portal:static/neuland/portal/css/style.css')}"/>
 		<script type="text/javascript">
-			var templateUri = "${request.static_url('neuland.portal:static/neuland/template/')}";
+			var templateUri = "${request.static_url('neuland.portal:static/neuland/portal/template/')}";
 		</script>
 	</head>
 
@@ -40,40 +40,13 @@
             </div>
 		</script>
 
-        <script type="text/x-handlebars" data-template-name="index">
-            <p class="lead text-success">Welcome to Neuland I.O.</p>
-        </script>
-
-        <script type="text/x-handlebars" data-template-name="register">
-            <form role="form">
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputFile">File input</label>
-                    <input type="file" id="exampleInputFile">
-                    <p class="help-block">Example block-level help text here.</p>
-                </div>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox"> Check me out
-                    </label>
-                </div>
-                <button type="submit" class="btn btn-default">Submit</button>
-            </form>
-        </script>
-
 		<script type="text/javascript" src="${request.static_url('neuland.portal:static/vendor/jquery/jquery-2.1.1.js')}"></script>
 		<script type="text/javascript" src="${request.static_url('neuland.portal:static/vendor/bootstrap/js/bootstrap.js')}"></script>
 		<script type="text/javascript" src="${request.static_url('neuland.portal:static/vendor/handlebars/handlebars-v1.3.0.js')}"></script>
 		<script type="text/javascript" src="${request.static_url('neuland.portal:static/vendor/ember/ember.prod.js')}"></script>
-		<!-- <script type="text/javascript" src="${request.static_url('neuland.portal:static/neuland/template.js')}"></script> -->
-        <script type="text/javascript" src="${request.static_url('neuland.portal:static/neuland/app.js')}"></script>
-		<script type="text/javascript" src="${request.static_url('neuland.portal:static/neuland/router.js')}"></script>
+		<script type="text/javascript" src="${request.static_url('neuland.portal:static/vendor/ember/ember-data.js')}"></script>
+		<script type="text/javascript" src="${request.static_url('neuland.portal:static/neuland/portal/js/template.js')}"></script>
+        <script type="text/javascript" src="${request.static_url('neuland.portal:static/neuland/portal/js/app.js')}"></script>
+		<script type="text/javascript" src="${request.static_url('neuland.portal:static/neuland/portal/js/router.js')}"></script>
  	</body>
 </html>

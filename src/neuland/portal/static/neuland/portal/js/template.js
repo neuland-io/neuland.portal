@@ -1,7 +1,7 @@
 var loaderObj = {
     templates : [
-        'register.html',
-        'index.html'
+        'register.hbs',
+        'index.hbs'
     ]
 };
 
@@ -15,6 +15,7 @@ function loadTemplates(templates) {
         tempObj.attr('data-template-name', dataTemplateName);
         $.ajax({
             async: false,
+            dataType: 'text',
             type: 'GET',
             url: templateUri + this,
             success: function(resp) {
