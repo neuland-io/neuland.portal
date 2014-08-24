@@ -1,6 +1,6 @@
 var loaderObj = {
     templates : [
-        'login.html'
+        'register.html'
     ]
 };
 
@@ -18,8 +18,7 @@ function loadTemplates(templates) {
             url: templateUri + this,
             success: function(resp) {
                 tempObj.html(resp);
-                console.log(tempObj);
-                $('body').append(tempObj);
+                $('#tab-content').append(tempObj);
             }
         });
     });
