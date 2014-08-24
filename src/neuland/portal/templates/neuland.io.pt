@@ -2,7 +2,7 @@
 <html lang="${request.locale_name}">
 	<head>
 		<meta charset="utf-8">
-		<title>NeulandIO</title>
+		<title>Neuland I.O.</title>
 		<link rel="stylesheet" href="${request.static_url('neuland.portal:static/vendor/bootstrap/css/bootstrap.css')}"/>
 		<link rel="stylesheet" href="${request.static_url('neuland.portal:static/neuland/portal/css/style.css')}"/>
 		<script type="text/javascript">
@@ -46,7 +46,12 @@
 		<script type="text/javascript" src="${request.static_url('neuland.portal:static/vendor/ember/ember.prod.js')}"></script>
 		<script type="text/javascript" src="${request.static_url('neuland.portal:static/vendor/ember/ember-data.js')}"></script>
 		<script type="text/javascript" src="${request.static_url('neuland.portal:static/neuland/portal/js/template.js')}"></script>
+
         <script type="text/javascript" src="${request.static_url('neuland.portal:static/neuland/portal/js/app.js')}"></script>
 		<script type="text/javascript" src="${request.static_url('neuland.portal:static/neuland/portal/js/router.js')}"></script>
+		<script type="text/javascript" src="${request.static_url('neuland.portal:static/neuland/portal/js/model/user.js')}"></script>
+
+		<script type="text/javascript" src="${request.static_url('neuland.portal:static/neuland/portal/js/controller/register.js')}"></script>
+
  	</body>
 </html>

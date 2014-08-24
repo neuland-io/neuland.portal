@@ -1,15 +1,33 @@
-<form role="form" {{action "login" on="submit"}}>
-    <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        {{input type="email" class="form-control" placeholder="Enter email" id="exampleInputEmail1"}}
+<div class="row clearfix">
+    <div class="col-md-6 col-md-offset-3 column">
+        <form role="form" {{action "register" on="submit"}}>
+
+            {{#if registerFailed}}
+                <div class="alert alert-danger" role="alert">
+                    Oops... an error occurred... ({{saveErrorMessage}}). Please try again later...
+                </div>
+            {{/if}}
+
+            {{#if registerSuccess}}
+				<div class="alert alert-success" role="alert">
+					All good... enjoy!
+				</div>
+            {{/if}}
+
+            <div class="form-group">
+                <label for="inputEmail">Email address</label>
+                {{input type="email" class="form-control" placeholder="Enter email" id="inputEmail" valueBinding="emailAddress"}}
+            </div>
+            <div class="form-group">
+                <label for="inputUsername">Username</label>
+                {{input type="text" class="form-control" placeholder="Enter username" id="inputUsername" valueBinding="username"}}
+            </div>
+            <div class="form-group">
+                <label for="inputPassword">Password</label>
+                {{input type="password" class="form-control" placeholder="Enter Password" id="inputPassword" valueBinding="password"}}
+            </div>
+            <button type="submit" class="btn btn-default" {{bindAttr disabled="isProcessing"}}>Sign up now...</button>
+        </form>
+
     </div>
-	<div class="form-group">
-		<label for="exampleInputUsername">Username</label>
-		<input type="text" class="form-control" id="exampleInputUsername" placeholder="Enter username">
-	</div>
-    <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-    </div>
-    <button type="submit" class="btn btn-default">Submit</button>
-</form>
+</div>
