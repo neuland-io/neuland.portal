@@ -25,10 +25,10 @@
                   {{#link-to 'index' class="navbar-brand"}}Neuland I.O.{{/link-to}}
                 </div>
                 <div class="collapse navbar-collapse">
-                  <ul class="nav navbar-nav">
-                    <li class="active">{{#link-to 'index'}}Home{{/link-to}}</li>
-                    <li>{{#link-to 'register'}}Register{{/link-to}}</li>
-                  </ul>
+					<ul class="nav navbar-nav">
+						{{#linkTo "index" tagName="li" href=false}}{{#linkTo "index"}}Home{{/linkTo}}{{/linkTo}}
+						{{#linkTo "register" tagName="li" href=false}}{{#linkTo "register"}}Register{{/linkTo}}{{/linkTo}}
+					</ul>
                 </div><!--/.nav-collapse -->
               </div>
             </div>
