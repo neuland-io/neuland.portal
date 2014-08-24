@@ -24,7 +24,7 @@
             <div {{bind-attr class=":form-group emailNotValid:has-warning"}}>
                 <label for="inputEmail">Email address</label>
 				<div class="input-group">
-				    <div class="input-group-addon">@</div>
+				    <div class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></div>
                     {{input type="text" class="form-control" placeholder="Enter email" id="inputEmail" valueBinding="emailAddress"}}
                 </div>
 				<!--<span {{bind-attr class=":email-warning-sign :glyphicon :glyphicon-warning-sign :form-control-feedback emailNotValid:show"}}></span>-->
