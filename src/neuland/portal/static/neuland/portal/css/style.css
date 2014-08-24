@@ -5,3 +5,15 @@ body {
   padding: 40px 15px;
   /*text-align: center;*/
 }
+
+.email-warning-sign {
+    display: none;
+}
+
+.hide {
+    display: none !important;
+}
+
+.show {
+    display: block !important;
+}

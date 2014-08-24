@@ -17,7 +17,14 @@ Neuland.RegisterController = Ember.Controller.extend({
     isProcessing: false,
     registerFailed: false,
     registerSuccess: false,
+    validationFailed: false,
     saveErrorMessage: '',
+
+    // validation states
+    emailMissing: false,
+    emailNotValid: false,
+    usernameMissing: false,
+    passwordMissing: false,
 
     /**
      * register action
@@ -30,7 +37,14 @@ Neuland.RegisterController = Ember.Controller.extend({
         this.setProperties({
             isProcessing: true,  // triggers the submit button state to "deactivate"
             registerFailed: false,
-            registerSuccess: false
+            registerSuccess: false,
+            validationFailed: false,
+
+            // reset validation states
+            emailMissing: false,
+            emailNotValid: false,
+            usernameMissing: false,
+            passwordMissing: false
         });
 
         // create user record in memory
@@ -40,18 +54,63 @@ Neuland.RegisterController = Ember.Controller.extend({
             password: this.get('password')
         })
 
-        // save the user record and get the promise
-        createdUserRecord.save().then(function() {
+        // validates the form values
+        var validationResult = createdUserRecord.validate();
+
+        // validation failed
+        if(!createdUserRecord.get('valid')) {
+            this.handleValidationResult(validationResult);
             controller.setProperties({
-                registerSuccess: true,
-                isProcessing: false
-            })
-        }, function(e) {
-            controller.setProperties({
-                registerFailed: true,
                 isProcessing: false,
-                saveErrorMessage: e.statusText
+                validationFailed: true
             })
+
+        // validation ok!
+        } else {
+
+            // save the user record (rest api) and get the promise
+            createdUserRecord.save().then(function () {
+                controller.setProperties({
+                    registerSuccess: true,
+                    isProcessing: true  // deactivate submit if registration success
+                })
+            }, function (e) {
+                controller.setProperties({
+                    isProcessing: false,
+                    registerFailed: true,
+                    saveErrorMessage: e.statusText
+                })
+            })
+        }
+    },
+
+    /**
+     * edit the form style depending on the validation results
+     * @param {Object[]} validationResult
+     */
+    handleValidationResult: function(validationResult) {
+
+        var _scope = this;
+
+        $.each(validationResult, function(i, obj) {
+            switch (obj.field) {
+                case 'emailAddress':
+                    _scope.setProperties({
+                        emailNotValid: true
+                    })
+                    break;
+                case 'username':
+                    _scope.setProperties({
+                        usernameMissing: true
+                    })
+                    break;
+                case 'password':
+                    _scope.setProperties({
+                        passwordMissing: true
+                    })
+                    break;
+            }
+
         })
     }
 

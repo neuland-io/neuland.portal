@@ -45,6 +45,8 @@
 		<script type="text/javascript" src="${request.static_url('neuland.portal:static/vendor/handlebars/handlebars-v1.3.0.js')}"></script>
 		<script type="text/javascript" src="${request.static_url('neuland.portal:static/vendor/ember/ember.prod.js')}"></script>
 		<script type="text/javascript" src="${request.static_url('neuland.portal:static/vendor/ember/ember-data.js')}"></script>
+		<script type="text/javascript" src="${request.static_url('neuland.portal:static/vendor/ember/ohmyval.js')}"></script>
+
 		<script type="text/javascript" src="${request.static_url('neuland.portal:static/neuland/portal/js/template.js')}"></script>
 
         <script type="text/javascript" src="${request.static_url('neuland.portal:static/neuland/portal/js/app.js')}"></script>
