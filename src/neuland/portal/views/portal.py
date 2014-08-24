@@ -3,13 +3,12 @@ from pyramid.view import view_config
 
 from sqlalchemy.exc import DBAPIError
 
-from .models import (
+from ..models import (
     DBSession,
     MyModel,
     )
 
-
-@view_config(route_name='home', renderer='templates/neuland.io.pt')
+@view_config(route_name='home', renderer='../templates/neuland.io.pt')
 def my_view(request):
     try:
         one = DBSession.query(MyModel).filter(MyModel.name == 'one').first()

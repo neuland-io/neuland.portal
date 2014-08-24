@@ -9,14 +9,16 @@ with open(os.path.join(here, 'CHANGES.txt')) as f:
     CHANGES = f.read()
 
 requires = [
+    'SQLAlchemy',
+    'cornice',
     'pyramid',
     'pyramid_chameleon',
     'pyramid_debugtoolbar',
     'pyramid_tm',
-    'SQLAlchemy',
+    'rutter',
     'transaction',
-    'zope.sqlalchemy',
     'waitress',
+    'zope.sqlalchemy',
     ],
 
 setup(name='neuland.portal',
@@ -44,8 +46,9 @@ setup(name='neuland.portal',
       install_requires=requires,
       entry_points="""\
       [paste.app_factory]
-      main = neuland.portal:main
+      portal = neuland.portal:portal
+      api = neuland.portal:api
       [console_scripts]
       initialize_portal_db = neuland.portal.scripts.initializedb:main
       """,
-      )
+)
