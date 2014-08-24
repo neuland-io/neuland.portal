@@ -7,7 +7,7 @@ Neuland = Ember.Application.create();
 //});
 
 DS.RESTAdapter.reopen({
-    namespace: 'api/1'
+    namespace: 'api/1.0'
 });
 
 function sleepFor( sleepDuration ){
