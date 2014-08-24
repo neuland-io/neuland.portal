@@ -2,5 +2,6 @@
  *
  */
 Neuland.Router.map(function() {
-    this.resource('login', { path: '/' });
+    //this.resource('index', { path: '/' });
+    this.resource('register', { path: '/t' });
 });
