@@ -5,6 +5,6 @@ python:
 
 before_script:
   - python bootstrap.py
-  - buildout
+  - ./bin/buildout
 
 script: py.test
