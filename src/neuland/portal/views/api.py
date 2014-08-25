@@ -7,10 +7,9 @@ from cornice import Service
 
 from sqlalchemy.exc import DBAPIError
 
-from ..models import (
-    DBSession,
-    MyModel,
-    )
+from neuland.portal.models import DBSession
+from neuland.portal.models.user import User
+
 
 users = Service(name='users', path='/users', description="User handling")
 
@@ -26,4 +25,5 @@ def create_user(request):
         content = json.loads(request.body.decode(encoding='UTF-8'))
     except ValueError:
         return False
+    print(content)
     return True
